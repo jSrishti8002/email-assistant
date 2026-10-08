@@ -160,7 +160,7 @@ def log_action(
     )
 
     with open(
-        "mega_project2_emailAssistant/logs/email_logs.txt",
+        "logs/email_logs.txt",
         "a",
         encoding="utf-8"
     ) as file:
@@ -254,7 +254,7 @@ service = get_gmail_service()
 results = service.users().messages().list(
     userId="me",
     labelIds=["INBOX", "UNREAD"],
-    maxResults=5
+    maxResults=1
 ).execute()
 
 messages = results.get("messages", [])
